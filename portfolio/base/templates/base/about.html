@@ -1,0 +1,355 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block content%}
+<body>
+
+
+    <style>
+        /* About Page Specific Styles */
+
+/* About Hero */
+.about-hero {
+    min-height: 300px;
+    background: linear-gradient(135deg, #0a2e38 0%, #1a4e6c 50%, #2c5282 100%);
+    background-size: cover;
+    background-position: center;
+    padding-top: 100px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 50px;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--primary-color);
+    top: 0;
+    bottom: 0;
+    left: 50px;
+    margin-left: -2px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 100%;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 4px solid var(--primary-color);
+    border-radius: 50%;
+    top: 15px;
+    left: 42px;
+    z-index: 1;
+}
+
+.timeline-content {
+    padding: 20px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+}
+
+.timeline-date {
+    position: absolute;
+    left: -100px;
+    top: 15px;
+    font-weight: bold;
+    color: var(--primary-color);
+    width: 80px;
+    text-align: right;
+}
+
+/* Testimonials */
+.testimonial-item {
+    padding: 30px;
+}
+
+.testimonial-item img {
+    border: 3px solid var(--primary-color);
+}
+
+.carousel-control-prev, .carousel-control-next {
+    width: 5%;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-size: 60%;
+}
+
+/* Skill Cards */
+.skill-card {
+    transition: transform 0.3s;
+    height: 100%;
+    background: white;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .timeline::after {
+        left: 31px;
+    }
+    
+    .timeline-item {
+        padding-left: 70px;
+    }
+    
+    .timeline-item::after {
+        left: 22px;
+    }
+    
+    .timeline-date {
+        position: relative;
+        left: 0;
+        text-align: left;
+        width: auto;
+        margin-bottom: 10px;
+    }
+}
+    </style>
+    <!-- About Hero Section -->
+    <section class="about-hero d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="display-4 fw-bold text-white">About Me</h1>
+                    <p class="lead text-white">Python/Django Developer with a passion for building efficient web applications</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Introduction Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="images/robin.jpg" alt="Profile" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-4">Who I Am</h2>
+                    <p class="lead">I'm Robin Antony, a professional web developer specializing in Python and Django framework.</p>
+                    <p>With over 5 years of experience in web development, I've helped numerous clients bring their ideas to life through clean, efficient code and user-friendly interfaces.</p>
+                    <p>My journey in programming began when I was studying Computer Science at University. Since then, I've worked with startups, established businesses, and everything in between.</p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Problem Solver</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Clean Coder</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Detail Oriented</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Team Player</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Continuous Learner</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Deadline Focused</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h2>My Skills</h2>
+                <div class="line"></div>
+                <p class="lead">Here are the technologies I work with regularly</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="skill-card text-center p-4 shadow-sm rounded">
+                        <div class="skill-icon mb-3">
+                            <i class="fab fa-python fa-4x text-primary"></i>
+                        </div>
+                        <h5>Python</h5>
+                        <p class="mb-0">Advanced Python development including Django, Flask, and data analysis</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="skill-card text-center p-4 shadow-sm rounded">
+                        <div class="skill-icon mb-3">
+                            <i class="fas fa-server fa-4x text-primary"></i>
+                        </div>
+                        <h5>Django</h5>
+                        <p class="mb-0">Full-stack development with Django and Django REST framework</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="skill-card text-center p-4 shadow-sm rounded">
+                        <div class="skill-icon mb-3">
+                            <i class="fab fa-html5 fa-4x text-primary"></i>
+                        </div>
+                        <h5>Frontend</h5>
+                        <p class="mb-0">HTML5, CSS3, Bootstrap, JavaScript, and modern frameworks</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="skill-card text-center p-4 shadow-sm rounded">
+                        <div class="skill-icon mb-3">
+                            <i class="fas fa-database fa-4x text-primary"></i>
+                        </div>
+                        <h5>Databases</h5>
+                        <p class="mb-0">PostgreSQL, MySQL, MongoDB, and database optimization</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h2>My Journey</h2>
+                <div class="line"></div>
+                <p class="lead">Professional experience and education</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2021 - Present</div>
+                    <div class="timeline-content shadow-sm">
+                        <h5>Freelance Web Developer</h5>
+                        <p class="text-muted">Self-employed</p>
+                        <p>Building custom web applications for clients worldwide using Python/Django stack. Specializing in e-commerce solutions, REST APIs, and responsive web design.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2019 - 2021</div>
+                    <div class="timeline-content shadow-sm">
+                        <h5>Senior Python Developer</h5>
+                        <p class="text-muted">Tech Solutions Inc.</p>
+                        <p>Led a team of developers building enterprise applications. Implemented CI/CD pipelines and mentored junior developers.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2017 - 2019</div>
+                    <div class="timeline-content shadow-sm">
+                        <h5>Web Developer</h5>
+                        <p class="text-muted">Digital Creative Agency</p>
+                        <p>Developed and maintained client websites using Django CMS and custom solutions. Worked closely with designers to implement UI/UX.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2013 - 2017</div>
+                    <div class="timeline-content shadow-sm">
+                        <h5>B.Sc. Computer Science</h5>
+                        <p class="text-muted">University of Technology</p>
+                        <p>Specialized in software engineering and web technologies. Graduated with honors.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h2>What Clients Say</h2>
+                <div class="line"></div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="testimonial-item text-center p-4 shadow-sm rounded bg-white">
+                                    <img src="images/client1.jpg" class="rounded-circle mb-3" width="80" alt="Client">
+                                    <p class="mb-4">"Robin transformed our outdated website into a modern, efficient platform that increased our conversions by 40%. His Django expertise is exceptional."</p>
+                                    <h6>Sarah Johnson</h6>
+                                    <p class="text-muted small">CEO, Business Solutions</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-item">
+                                <div class="testimonial-item text-center p-4 shadow-sm rounded bg-white">
+                                    <img src="images/client2.jpg" class="rounded-circle mb-3" width="80" alt="Client">
+                                    <p class="mb-4">"Working with Robin on our e-commerce project was a pleasure. He delivered ahead of schedule and implemented complex features flawlessly."</p>
+                                    <h6>Michael Chen</h6>
+                                    <p class="text-muted small">Founder, ShopOnline</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-item">
+                                <div class="testimonial-item text-center p-4 shadow-sm rounded bg-white">
+                                    <img src="images/client3.jpg" class="rounded-circle mb-3" width="80" alt="Client">
+                                    <p class="mb-4">"Robin's API development skills saved our mobile app project. His clean code and documentation made integration seamless."</p>
+                                    <h6>Emma Rodriguez</h6>
+                                    <p class="text-muted small">CTO, AppInnovate</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h3 class="fw-bold mb-3">Ready to start your project?</h3>
+                    <p class="mb-0">I'm available for freelance work and would love to discuss your project requirements.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                    <a href="contact.html" class="btn btn-light btn-lg">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+{% endblock %}

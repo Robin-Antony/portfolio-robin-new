@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe | Python/Django Developer</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <body data-bs-spy="scroll" data-bs-target="#navbar">
+        <style>
+            /* General Styles */
+    :root {
+        --primary-color: #3498db;
+        --secondary-color: #2c3e50;
+        --light-color: #f8f9fa;
+        --dark-color: #343a40;
+    }
+    
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+    
+    a {
+        text-decoration: none;
+        color: var(--primary-color);
+    }
+    
+    a:hover {
+        color: #2980b9;
+    }
+    
+    .section-title {
+        position: relative;
+        margin-bottom: 50px;
+    }
+    
+    .section-title h2 {
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+    
+    .section-title .line {
+        width: 80px;
+        height: 4px;
+        background-color: var(--primary-color);
+        margin: 0 auto;
+    }
+    
+    /* Navbar */
+    .navbar {
+        padding: 15px 0;
+        transition: all 0.3s;
+    }
+    
+    .navbar.scrolled {
+        padding: 10px 0;
+        background-color: rgba(44, 62, 80, 0.9) !important;
+    }
+    
+    .navbar-brand {
+        font-weight: 700;
+        font-size: 1.5rem;
+    }
+    
+    .nav-link {
+        font-weight: 500;
+        padding: 8px 15px !important;
+    }
+    
+    /* Hero Section */
+    .hero {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #0f1f29, #1d3b45, #2f4e5d, #2b180d);
+    
+    
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding-top: 80px;
+    }
+    
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+        font-weight: 300;
+    }
+    
+    /* About Section */
+    .about img {
+        max-width: 300px;
+        border: 5px solid var(--primary-color);
+    }
+    
+    /* Services */
+    .card {
+        transition: transform 0.3s;
+        border: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card:hover {
+        transform: translateY(-10px);
+    }
+    
+    .card i {
+        color: var(--primary-color);
+    }
+    
+    /* Portfolio */
+    .portfolio-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .portfolio-item img {
+        transition: transform 0.5s;
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+    
+    .portfolio-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(52, 152, 219, 0.9);
+        opacity: 0;
+        transition: opacity 0.5s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+    }
+    
+    .portfolio-item:hover .portfolio-overlay {
+        opacity: 1;
+    }
+    
+    .portfolio-item:hover img {
+        transform: scale(1.1);
+    }
+    
+    /* Skills */
+    .progress {
+        height: 10px;
+        border-radius: 5px;
+    }
+    
+    .progress-bar {
+        background-color: var(--primary-color);
+    }
+    
+    /* Contact */
+    .contact-form .form-control {
+        padding: 10px 15px;
+        border-radius: 0;
+        border: 1px solid #ddd;
+    }
+    
+    .contact-form .form-control:focus {
+        box-shadow: none;
+        border-color: var(--primary-color);
+    }
+    
+    .social-links a {
+        color: var(--secondary-color);
+        transition: color 0.3s;
+    }
+    
+    .social-links a:hover {
+        color: var(--primary-color);
+    }
+    
+    /* Back to Top */
+    .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: 50%;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 99;
+        transition: all 0.3s;
+    }
+    
+    .back-to-top:hover {
+        background-color: #2980b9;
+        color: white;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .hero h1 {
+            font-size: 2.5rem;
+        }
+        
+        .hero h2 {
+            font-size: 1.5rem;
+        }
+        
+        .about img {
+            margin: 0 auto;
+        }
+    }
+        </style>
+        <!-- Navigation -->
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">Robin Antony</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'about' %}">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'services' %}">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'portfolio' %}">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'skill' %}">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+{% block content %}
+
+
+
+{% endblock %}
+<footer class="bg-dark text-white py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="mb-0">&copy; 2023 robinantony202@gmail.com All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <p class="mb-0">Designed with <i class="fas fa-heart text-danger"></i> by Robin Antony</p>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+
+
+
+</html>

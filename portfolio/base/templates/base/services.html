@@ -1,0 +1,509 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block content%}
+<body>
+    <style>
+        /* Services Page Specific Styles */
+
+/* Services Hero */
+.services-hero {
+    min-height: 300px;
+    background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('../images/services-bg.jpg');
+    background: linear-gradient(135deg, #0a2e38 0%, #1a4e6c 50%, #2c5282 100%);
+    background-size: cover;
+    background-position: center;
+    padding-top: 100px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+/* Service Cards */
+.service-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    height: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-icon {
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 2.5rem;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.service-content {
+    padding: 25px;
+}
+
+.service-content h4 {
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+.service-features {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+.service-features li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.service-features i {
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    top: 4px;
+}
+
+/* Pricing Cards */
+.pricing-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    height: 100%;
+}
+
+.pricing-card.featured {
+    transform: scale(1.05);
+    border: 2px solid var(--primary-color);
+}
+
+.pricing-header {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.pricing-header h4 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+.price span {
+    font-size: 1.5rem;
+}
+
+.pricing-body {
+    padding: 30px;
+}
+
+.pricing-body ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 30px;
+}
+
+.pricing-body li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.pricing-body i {
+    position: absolute;
+    left: 0;
+    top: 4px;
+}
+
+.pricing-body .fa-check {
+    color: var(--primary-color);
+}
+
+.pricing-body .fa-times {
+    color: #ccc;
+}
+
+/* Process Steps */
+.process-steps {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.process-steps::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--primary-color);
+    top: 0;
+    bottom: 0;
+    left: 50px;
+    margin-left: -2px;
+}
+
+.process-step {
+    padding: 20px 0 20px 80px;
+    position: relative;
+}
+
+.step-number {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.step-content {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.step-content h4 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .pricing-card.featured {
+        transform: scale(1);
+    }
+    
+    .process-steps::before {
+        left: 25px;
+    }
+    
+    .process-step {
+        padding-left: 60px;
+    }
+    
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+    </style>
+
+    <!-- Services Hero Section -->
+    <section class="services-hero d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="display-4 fw-bold text-white">My Services</h1>
+                    <p class="lead text-white">Professional web development solutions tailored to your needs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h2>What I Offer</h2>
+                <div class="line"></div>
+                <p class="lead">Comprehensive web development services to help your business grow</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4>Custom Web Development</h4>
+                            <p>Bespoke web applications built with Python and Django framework, tailored to your specific business requirements.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Full-stack development</li>
+                                <li><i class="fas fa-check-circle"></i> RESTful API integration</li>
+                                <li><i class="fas fa-check-circle"></i> Database design</li>
+                                <li><i class="fas fa-check-circle"></i> Third-party API integration</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4>E-commerce Solutions</h4>
+                            <p>Powerful online stores with secure payment processing, inventory management, and customer accounts.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Payment gateway integration</li>
+                                <li><i class="fas fa-check-circle"></i> Product management</li>
+                                <li><i class="fas fa-check-circle"></i> Order processing</li>
+                                <li><i class="fas fa-check-circle"></i> Shipping calculations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4>Responsive Web Design</h4>
+                            <p>Beautiful, mobile-friendly websites that work perfectly on all devices and screen sizes.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Bootstrap framework</li>
+                                <li><i class="fas fa-check-circle"></i> Mobile-first approach</li>
+                                <li><i class="fas fa-check-circle"></i> Cross-browser testing</li>
+                                <li><i class="fas fa-check-circle"></i> Performance optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4>API Development</h4>
+                            <p>Robust backend APIs to power your web and mobile applications with clean documentation.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Django REST framework</li>
+                                <li><i class="fas fa-check-circle"></i> JWT authentication</li>
+                                <li><i class="fas fa-check-circle"></i> Rate limiting</li>
+                                <li><i class="fas fa-check-circle"></i> Swagger documentation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4>Maintenance & Support</h4>
+                            <p>Ongoing maintenance, updates, and technical support to keep your application running smoothly.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Regular updates</li>
+                                <li><i class="fas fa-check-circle"></i> Security patches</li>
+                                <li><i class="fas fa-check-circle"></i> Bug fixes</li>
+                                <li><i class="fas fa-check-circle"></i> Performance monitoring</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4>Database Solutions</h4>
+                            <p>Optimized database design and implementation for performance and scalability.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> PostgreSQL/MySQL</li>
+                                <li><i class="fas fa-check-circle"></i> Database optimization</li>
+                                <li><i class="fas fa-check-circle"></i> Data migration</li>
+                                <li><i class="fas fa-check-circle"></i> Backup solutions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h2>Pricing Plans</h2>
+                <div class="line"></div>
+                <p class="lead">Flexible pricing options for projects of all sizes</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Basic Plan -->
+                <div class="col-md-4">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h4>Basic</h4>
+                            <div class="price"><span>$99</span> / project</div>
+                            <p class="small">Small projects or single-page applications</p>
+                        </div>
+                        <div class="pricing-body">
+                            <ul>
+                                <li><i class="fas fa-check"></i> 1-3 Pages</li>
+                                <li><i class="fas fa-check"></i> Basic Contact Form</li>
+                                <li><i class="fas fa-check"></i> Responsive Design</li>
+                                <li><i class="fas fa-check"></i> 1 Revision</li>
+                                <li><i class="fas fa-times"></i> No CMS Integration</li>
+                                <li><i class="fas fa-times"></i> No E-commerce</li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-outline-primary w-100">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Standard Plan -->
+                <div class="col-md-4">
+                    <div class="pricing-card featured">
+                        <div class="pricing-header">
+                            <h4>Standard</h4>
+                            <div class="price"><span>$499</span> / project</div>
+                            <p class="small">Most popular for small business websites</p>
+                        </div>
+                        <div class="pricing-body">
+                            <ul>
+                                <li><i class="fas fa-check"></i> 5-10 Pages</li>
+                                <li><i class="fas fa-check"></i> CMS Integration</li>
+                                <li><i class="fas fa-check"></i> Custom Design</li>
+                                <li><i class="fas fa-check"></i> 3 Revisions</li>
+                                <li><i class="fas fa-check"></i> Basic SEO</li>
+                                <li><i class="fas fa-times"></i> No E-commerce</li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-primary w-100">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Premium Plan -->
+                <div class="col-md-4">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h4>Premium</h4>
+                            <div class="price"><span>$999+</span> / project</div>
+                            <p class="small">Custom web applications and e-commerce</p>
+                        </div>
+                        <div class="pricing-body">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Unlimited Pages</li>
+                                <li><i class="fas fa-check"></i> E-commerce Functionality</li>
+                                <li><i class="fas fa-check"></i> Custom Web Application</li>
+                                <li><i class="fas fa-check"></i> 5+ Revisions</li>
+                                <li><i class="fas fa-check"></i> Advanced SEO</li>
+                                <li><i class="fas fa-check"></i> Ongoing Support</li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-outline-primary w-100">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <p class="text-muted">Need something different? All projects are customizable.</p>
+                <a href="contact.html" class="btn btn-secondary">Request Custom Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h2>My Process</h2>
+                <div class="line"></div>
+                <p class="lead">How I work to deliver exceptional results</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Discovery</h4>
+                        <p>We discuss your project requirements, goals, and target audience to create a detailed plan.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Design</h4>
+                        <p>I create wireframes and mockups to visualize the user interface and experience.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Development</h4>
+                        <p>Your project comes to life with clean, efficient code following best practices.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Testing</h4>
+                        <p>Rigorous testing across devices and browsers ensures everything works perfectly.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h4>Launch</h4>
+                        <p>Your project goes live with deployment and post-launch support.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h3 class="fw-bold mb-3">Ready to discuss your project?</h3>
+                    <p class="mb-0">Let's build something amazing together. Get in touch today!</p>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                    <a href="contact.html" class="btn btn-light btn-lg">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+{% endblock %}

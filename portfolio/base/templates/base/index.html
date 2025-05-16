@@ -1,0 +1,440 @@
+{% extends 'base/main.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section id="home" class="hero d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Hi, I'm Robin Antony</h1>
+                    <h2 class="mb-4">Python/Django Web Developer</h2>
+                    <p class="lead mb-4">I build responsive, scalable web applications with modern technologies.</p>
+                    <a href="#portfolio" class="btn btn-primary btn-lg me-3">View My Work</a>
+                    <a href="#contact" class="btn btn-outline-light btn-lg">Hire Me</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="{% static 'images/banner.jpeg' %}" alt="Developer" class="img-fluid d-none d-lg-block">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h2>About Me</h2>
+                <div class="line"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <img  src="{% static 'images/avatharbanner.png' %}" alt="Profile" class="img-fluid  mb-4">
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="mb-3">Python/Django Web Developer</h3>
+                    <p class="mb-4">I'm a freelance web developer specializing in Python, Django, and modern front-end technologies. With over 5 years of experience, I help businesses build robust web applications.</p>
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> <strong>Name:</strong> Robin Antony</li>
+                                <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> <strong>Experience:</strong> 5+ Years</li>
+                                <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> <strong>Email:</strong> robinantony202@gmail.com</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> <strong>Freelance:</strong> Available</li>
+                                <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> <strong>Degree:</strong> Computer Science</li>
+                                <li class="mb-2"><i class="fas fa-chevron-right me-2"></i> <strong>Location:</strong> Kerala, Ernakulam</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <p>I'm passionate about creating efficient, scalable web applications that solve real-world problems. My approach combines clean code with user-centered design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h2>Services</h2>
+                <div class="line"></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-laptop-code fa-3x mb-4 text-primary"></i>
+                            <h5 class="card-title">Web Development</h5>
+                            <p class="card-text">Custom web applications built with Python, Django, and modern JavaScript frameworks.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-mobile-alt fa-3x mb-4 text-primary"></i>
+                            <h5 class="card-title">Responsive Design</h5>
+                            <p class="card-text">Mobile-friendly websites that work perfectly on all devices using Bootstrap.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-database fa-3x mb-4 text-primary"></i>
+                            <h5 class="card-title">Backend Development</h5>
+                            <p class="card-text">Robust backend systems with Django REST framework and PostgreSQL.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-shopping-cart fa-3x mb-4 text-primary"></i>
+                            <h5 class="card-title">E-commerce Solutions</h5>
+                            <p class="card-text">Custom e-commerce platforms with payment integration and inventory management.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-server fa-3x mb-4 text-primary"></i>
+                            <h5 class="card-title">API Development</h5>
+                            <p class="card-text">RESTful API development for web and mobile applications.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-tools fa-3x mb-4 text-primary"></i>
+                            <h5 class="card-title">Maintenance & Support</h5>
+                            <p class="card-text">Ongoing maintenance, updates, and technical support for your applications.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-5">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h2>Portfolio</h2>
+                <div class="line"></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item">
+                        <img src='{% static "images/service3.png" %}'  class="img-fluid" alt="E-commerce Website">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h5>E-commerce Platform</h5>
+                                <p>Built with Django, Bootstrap, and Stripe integration</p>
+                                <a href="#" class="btn btn-sm btn-light">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item">
+                        <img  src='{% static "images/blogging.jpeg" %}'  class="img-fluid" alt="Blog Application">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h5>Blog Application</h5>
+                                <p>Django-based CMS with rich text editing</p>
+                                <a href="#" class="btn btn-sm btn-light">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item">
+                        <img  src='{% static "images/taskmanagement.jpeg" %}' class="img-fluid" alt="Task Management">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h5>Task Management App</h5>
+                                <p>Django REST API with React frontend</p>
+                                <a href="#" class="btn btn-sm btn-light">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item">
+                        <img src='{% static "images/realestate.jpeg" %}' class="img-fluid" alt="Real Estate">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h5>Real Estate Website</h5>
+                                <p>Property listing platform with advanced search</p>
+                                <a href="#" class="btn btn-sm btn-light">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item">
+                        <img  src='{% static "images/socialmedia.jpeg" %}' class="img-fluid" alt="Social Network">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h5>Social Network</h5>
+                                <p>Django-based community platform</p>
+                                <a href="#" class="btn btn-sm btn-light">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="portfolio-item">
+                        <img  src='{% static "images/analytics.jpeg" %}' class="img-fluid" alt="Analytics Dashboard">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h5>Analytics Dashboard</h5>
+                                <p>Data visualization with Django and Chart.js</p>
+                                <a href="#" class="btn btn-sm btn-light">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h2>Technical Skills</h2>
+                <div class="line"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="skill-item mb-4">
+                        <div class="d-flex justify-content-between">
+                            <h6>Python/Django</h6>
+                            <span>95%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item mb-4">
+                        <div class="d-flex justify-content-between">
+                            <h6>HTML/CSS</h6>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item mb-4">
+                        <div class="d-flex justify-content-between">
+                            <h6>JavaScript</h6>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="skill-item mb-4">
+                        <div class="d-flex justify-content-between">
+                            <h6>Bootstrap</h6>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item mb-4">
+                        <div class="d-flex justify-content-between">
+                            <h6>PostgreSQL</h6>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item mb-4">
+                        <div class="d-flex justify-content-between">
+                            <h6>Git/Version Control</h6>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12">
+                    <h4 class="text-center mb-4">Other Technologies</h4>
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <span class="badge bg-secondary p-2">Django REST Framework</span>
+                        <span class="badge bg-secondary p-2">React</span>
+                        <span class="badge bg-secondary p-2">jQuery</span>
+                        <span class="badge bg-secondary p-2">AWS</span>
+                        <span class="badge bg-secondary p-2">Docker</span>
+                        <span class="badge bg-secondary p-2">Celery</span>
+                        <span class="badge bg-secondary p-2">Redis</span>
+                        <span class="badge bg-secondary p-2">GraphQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+        {% endif %}
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h2>Contact Me</h2>
+                <div class="line"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="contact-info">
+                        <h4 class="mb-4">Get In Touch</h4>
+                        <p class="mb-4">Feel free to reach out for project inquiries or just to say hello!</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <i class="fas fa-map-marker-alt me-3"></i>
+                                <span>123 Street, Kerala, Ernakulam</span>
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-envelope me-3"></i>
+                                <span>robinantony202@gmail.com</span>
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-phone me-3"></i>
+                                <span>9526953674</span>
+                            </li>
+                        </ul>
+                        <div class="social-links mt-4">
+                            <a href="#" class="me-3"><i class="fab fa-github fa-2x"></i></a>
+                            <a href="#" class="me-3"><i class="fab fa-linkedin fa-2x"></i></a>
+                            <a href="#" class="me-3"><i class="fab fa-twitter fa-2x"></i></a>
+                            <a href="#" class="me-3"><i class="fab fa-stack-overflow fa-2x"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <form class="contact-form" method="POST">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                {{form.name}}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                {{form.email}}
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            {{form.phone_no}}
+                        </div>
+                        <div class="mb-3">
+                            {{form.message}}
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            document.querySelector('.navbar').classList.add('scrolled');
+        } else {
+            document.querySelector('.navbar').classList.remove('scrolled');
+        }
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Back to top button
+    const backToTopButton = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            backToTopButton.style.display = 'flex';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    });
+
+    backToTopButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Initialize Bootstrap tooltips
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+
+    // Form submission handling
+    // const contactForm = document.querySelector('.contact-form');
+    // if (contactForm) {
+    //     contactForm.addEventListener('submit', function(e) {
+    //         e.preventDefault();
+    //         // Here you would typically send the form data to your server
+    //         alert('Thank you for your message! I will get back to you soon.');
+    //         this.reset();
+    //     });
+    // }
+});
+    </script>
+</body>
+
+{% endblock %}

@@ -1,0 +1,477 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block content%}
+<body>
+    <style>
+        /* Portfolio Page Specific Styles */
+
+/* Portfolio Hero */
+.portfolio-hero {
+    min-height: 300px;
+    background: linear-gradient(135deg, #0a2e38 0%, #1a4e6c 50%, #2c5282 100%);
+    background-size: cover;
+    background-position: center;
+    padding-top: 100px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+/* Portfolio Filter */
+.portfolio-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.portfolio-filter .btn {
+    margin: 5px;
+}
+
+/* Portfolio Cards */
+.portfolio-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.portfolio-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(52, 152, 219, 0.9);
+    opacity: 0;
+    transition: opacity 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.portfolio-card:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-card:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-info {
+    padding: 20px;
+}
+
+.portfolio-info h5 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.portfolio-links {
+    margin-top: 20px;
+}
+
+.portfolio-links a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.portfolio-links a:hover {
+    color: var(--secondary-color);
+    transform: scale(1.2);
+}
+
+/* Counter Section */
+.counter i {
+    color: white;
+}
+
+.counter h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Testimonials */
+.testimonial-item {
+    padding: 30px;
+}
+
+.testimonial-item img {
+    border: 3px solid var(--primary-color);
+}
+
+.rating {
+    color: gold;
+    margin-top: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .portfolio-filter {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .portfolio-filter .btn {
+        width: 200px;
+    }
+    
+    .counter h2 {
+        font-size: 2rem;
+    }
+}
+    </style>
+
+
+    <!-- Portfolio Hero Section -->
+    <section class="portfolio-hero d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1 class="display-4 fw-bold text-white">My Portfolio</h1>
+                    <p class="lead text-white">Showcasing my best work and projects</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Filter -->
+    <section class="py-4 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="portfolio-filter text-center">
+                        <button class="btn btn-outline-primary active" data-filter="*">All Projects</button>
+                        <button class="btn btn-outline-primary" data-filter=".web">Web Development</button>
+                        <button class="btn btn-outline-primary" data-filter=".ecommerce">E-commerce</button>
+                        <button class="btn btn-outline-primary" data-filter=".api">API Projects</button>
+                        <button class="btn btn-outline-primary" data-filter=".mobile">Mobile Friendly</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4 portfolio-container">
+                <!-- Project 1 -->
+                <div class="col-md-6 col-lg-4 portfolio-item web mobile">
+                    <div class="portfolio-card">
+                        <img src="images/portfolio-1.jpg" class="img-fluid" alt="E-commerce Platform">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h5>E-commerce Platform</h5>
+                                <p>Built with Django, Bootstrap, and Stripe integration</p>
+                                <div class="portfolio-links">
+                                    <a href="images/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="E-commerce Platform"><i class="fas fa-search-plus"></i></a>
+                                    <a href="project-details.html" title="More Details"><i class="fas fa-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="col-md-6 col-lg-4 portfolio-item web api">
+                    <div class="portfolio-card">
+                        <img src="images/portfolio-2.jpg" class="img-fluid" alt="Blog Application">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h5>Blog Application</h5>
+                                <p>Django-based CMS with rich text editing</p>
+                                <div class="portfolio-links">
+                                    <a href="images/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Blog Application"><i class="fas fa-search-plus"></i></a>
+                                    <a href="project-details.html" title="More Details"><i class="fas fa-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="col-md-6 col-lg-4 portfolio-item web mobile api">
+                    <div class="portfolio-card">
+                        <img src="images/portfolio-3.jpg" class="img-fluid" alt="Task Management">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h5>Task Management App</h5>
+                                <p>Django REST API with React frontend</p>
+                                <div class="portfolio-links">
+                                    <a href="images/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Task Management App"><i class="fas fa-search-plus"></i></a>
+                                    <a href="project-details.html" title="More Details"><i class="fas fa-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="col-md-6 col-lg-4 portfolio-item ecommerce mobile">
+                    <div class="portfolio-card">
+                        <img src="images/portfolio-4.jpg" class="img-fluid" alt="Real Estate">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h5>Real Estate Website</h5>
+                                <p>Property listing platform with advanced search</p>
+                                <div class="portfolio-links">
+                                    <a href="images/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Real Estate Website"><i class="fas fa-search-plus"></i></a>
+                                    <a href="project-details.html" title="More Details"><i class="fas fa-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="col-md-6 col-lg-4 portfolio-item web api">
+                    <div class="portfolio-card">
+                        <img src="images/portfolio-5.jpg" class="img-fluid" alt="Social Network">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h5>Social Network</h5>
+                                <p>Django-based community platform</p>
+                                <div class="portfolio-links">
+                                    <a href="images/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Social Network"><i class="fas fa-search-plus"></i></a>
+                                    <a href="project-details.html" title="More Details"><i class="fas fa-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="col-md-6 col-lg-4 portfolio-item web mobile">
+                    <div class="portfolio-card">
+                        <img src="images/portfolio-6.jpg" class="img-fluid" alt="Analytics Dashboard">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h5>Analytics Dashboard</h5>
+                                <p>Data visualization with Django and Chart.js</p>
+                                <div class="portfolio-links">
+                                    <a href="images/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Analytics Dashboard"><i class="fas fa-search-plus"></i></a>
+                                    <a href="project-details.html" title="More Details"><i class="fas fa-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Statistics -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-6 col-md-3 mb-4 mb-md-0">
+                    <div class="counter">
+                        <i class="fas fa-project-diagram fa-3x mb-3"></i>
+                        <h2 class="mb-0" data-counter="42">0</h2>
+                        <p>Projects Completed</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 mb-4 mb-md-0">
+                    <div class="counter">
+                        <i class="fas fa-users fa-3x mb-3"></i>
+                        <h2 class="mb-0" data-counter="36">0</h2>
+                        <p>Happy Clients</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 mb-4 mb-md-0">
+                    <div class="counter">
+                        <i class="fas fa-code fa-3x mb-3"></i>
+                        <h2 class="mb-0" data-counter="125000">0</h2>
+                        <p>Lines of Code</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="counter">
+                        <i class="fas fa-award fa-3x mb-3"></i>
+                        <h2 class="mb-0" data-counter="8">0</h2>
+                        <p>Awards Won</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <h2>Client Testimonials</h2>
+                <div class="line"></div>
+                <p class="lead">What my clients say about my work</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="testimonial-item text-center p-4 shadow-sm rounded bg-white">
+                                    <img src="images/client1.jpg" class="rounded-circle mb-3" width="80" alt="Client">
+                                    <p class="mb-4">"John transformed our outdated website into a modern, efficient platform that increased our conversions by 40%. His Django expertise is exceptional."</p>
+                                    <h6>Sarah Johnson</h6>
+                                    <p class="text-muted small">CEO, Business Solutions</p>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-item">
+                                <div class="testimonial-item text-center p-4 shadow-sm rounded bg-white">
+                                    <img src="images/client2.jpg" class="rounded-circle mb-3" width="80" alt="Client">
+                                    <p class="mb-4">"Working with John on our e-commerce project was a pleasure. He delivered ahead of schedule and implemented complex features flawlessly."</p>
+                                    <h6>Michael Chen</h6>
+                                    <p class="text-muted small">Founder, ShopOnline</p>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-item">
+                                <div class="testimonial-item text-center p-4 shadow-sm rounded bg-white">
+                                    <img src="images/client3.jpg" class="rounded-circle mb-3" width="80" alt="Client">
+                                    <p class="mb-4">"John's API development skills saved our mobile app project. His clean code and documentation made integration seamless."</p>
+                                    <h6>Emma Rodriguez</h6>
+                                    <p class="text-muted small">CTO, AppInnovate</p>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5 bg-dark text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h3 class="fw-bold mb-3">Like what you see?</h3>
+                    <p class="mb-0">Let's discuss how I can help with your next project.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                    <a href="contact.html" class="btn btn-primary btn-lg">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Isotope portfolio filter
+    const portfolioContainer = document.querySelector('.portfolio-container');
+    if (portfolioContainer) {
+        const iso = new Isotope(portfolioContainer, {
+            itemSelector: '.portfolio-item',
+            layoutMode: 'fitRows'
+        });
+
+        // Filter items on button click
+        const filterButtons = document.querySelectorAll('.portfolio-filter button');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filterValue = this.getAttribute('data-filter');
+                iso.arrange({ filter: filterValue });
+            });
+        });
+    }
+
+    // Animate counters
+    const counters = document.querySelectorAll('.counter h2');
+    const speed = 200;
+    
+    function animateCounters() {
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-counter');
+            const count = +counter.innerText;
+            const increment = target / speed;
+            
+            if (count < target) {
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(animateCounters, 1);
+            } else {
+                counter.innerText = target;
+            }
+        });
+    }
+    
+    // Start counting when section is in view
+    const counterSection = document.querySelector('.bg-primary');
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            animateCounters();
+            observer.unobserve(counterSection);
+        }
+    }, { threshold: 0.5 });
+    
+    if (counterSection) {
+        observer.observe(counterSection);
+    }
+
+    // Initialize Bootstrap tooltips
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+});
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Isotope Filtering -->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+{% endblock %}
